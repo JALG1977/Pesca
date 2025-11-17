@@ -1,5 +1,5 @@
-Resumen del Desarrollo del Proyecto, Problemas Enfrentados, Instalación y Ejecución
-************************************************************************************
+<strong>Resumen del Desarrollo del Proyecto, Problemas Enfrentados, Instalación y Ejecución</strong>
+
 
 
 El presente proyecto corresponde al desarrollo de una aplicación móvil construida con Ionic y Angular en formato de componentes standalone. 
@@ -13,8 +13,8 @@ En general puedo decir que el problema más recurrente tuvo relación con la imp
 
 
 
-Instalación y ejecución del proyecto
-************************************
+<strong>Instalación y ejecución del proyecto</strong>
+
 
 La instalación y ejecución del proyecto requiere clonar el repositorio, <br/>
 instalar dependencias con npm install y ejecutar ionic serve para visualizar la aplicación en el navegador.<br/>
