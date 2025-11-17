@@ -12,6 +12,7 @@ Posteriormente se desarrolló la página Home, que incluyó un álbum de fotos c
 En general puedo decir que el problema más recurrente tuvo relación con la importación de componentes. Por otra parte al no ser un usuario de GitHub me costó en un principio realizar la sincronización del proyecto, hay mucha información y tutoriales en línea que me ayudaron a realizar esta tarea. 
 
 
+
 Instalación y ejecución del proyecto
 ************************************
 
