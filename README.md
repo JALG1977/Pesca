@@ -16,19 +16,20 @@ En general puedo decir que el problema más recurrente tuvo relación con la imp
 Instalación y ejecución del proyecto
 ************************************
 
-La instalación y ejecución del proyecto requiere clonar el repositorio, 
-instalar dependencias con npm install y ejecutar ionic serve para visualizar la aplicación en el navegador.
-Requisitos:
-Node.js instalado.
-Ionic CLI (global):
-npm install -g @ionic/cli
-Git instalado y configurado.
-Pasos para ejecutar el proyecto localmente:
-Clonar el repo:
-git clone https://github.com/JALG1977/Pesca.git
-cd Pesca
-Instalar dependencias:
-npm install
-Levantar el proyecto:
-ionic serve
-Abrir en el navegador http://localhost:8100
+La instalación y ejecución del proyecto requiere clonar el repositorio, <br/>
+instalar dependencias con npm install y ejecutar ionic serve para visualizar la aplicación en el navegador.<br/>
+
+Requisitos:<br/>
+Node.js instalado.<br/>
+Ionic CLI (global):<br/>
+npm install -g @ionic/cli<br/>
+Git instalado y configurado.<br/>
+Pasos para ejecutar el proyecto localmente:<br/>
+Clonar el repo:<br/>
+git clone https://github.com/JALG1977/Pesca.git<br/>
+cd Pesca<br/>
+Instalar dependencias:<br/>
+npm install<br/>
+Levantar el proyecto:<br/>
+ionic serve<br/>
+Abrir en el navegador http://localhost:8100<br/>
