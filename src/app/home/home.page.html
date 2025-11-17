@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="header">
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="album-content">
+
+  <h2 class="album-title">Álbum de Fotos</h2>
+
+  <div class="album-container">
+    <div
+      class="photo-card"
+      *ngFor="let photo of photos"
+      (click)="openModal(photo)"
+    >
+      <img [src]="photo.src" [alt]="photo.title" />
+      <div class="photo-caption">{{ photo.title }}</div>
+    </div>
+  </div>
+
+  <!-- Modal con foto grande -->
+  <ion-modal [isOpen]="isModalOpen" (didDismiss)="closeModal()">
+    <ng-container *ngIf="selectedPhoto">
+      <div class="modal-inner">
+        <img
+          [src]="selectedPhoto.src"
+          [alt]="selectedPhoto.title"
+          class="modal-image"
+        />
+        <h3 class="modal-title">{{ selectedPhoto.title }}</h3>
+        <p class="modal-text">
+          {{ selectedPhoto.description }}
+        </p>
+        <ion-button expand="block" (click)="closeModal()">
+          Cerrar
+        </ion-button>
+      </div>
+    </ng-container>
+  </ion-modal>
+<ion-button class="btn-agregar" expand="block" routerLink="/agregarimagen">
+  Agregar
+</ion-button>
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="login-header">
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="login-content">
+
+  <div class="login-container">
+
+    <ion-icon name="person-circle-outline" class="login-icon"></ion-icon>
+
+    <form>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Usuario</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" class="login-button">
+        Acceder
+      </ion-button>
+      
+      <ion-button class="text"  expand="block" fill="clear" routerLink="/registro">
+        Crear cuenta nueva
+      </ion-button>
+    </form>
+
+  </div>
+
+</ion-content>
+

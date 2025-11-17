@@ -1,0 +1,72 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="registro-content">
+  <h2 class="registro-title">Crear cuenta</h2>
+
+  <form (ngSubmit)="registrar()" class="registro-form">
+    <ion-item>
+      <ion-label position="stacked">Nombre completo</ion-label>
+      <ion-input
+        [(ngModel)]="nombre"
+        name="nombre"
+        type="text"
+        required
+        placeholder="Ej: Juan Pérez">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Correo electrónico</ion-label>
+      <ion-input
+        [(ngModel)]="email"
+        name="email"
+        type="email"
+        required
+        placeholder="ejemplo@correo.com">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Contraseña</ion-label>
+      <ion-input
+        [(ngModel)]="password"
+        name="password"
+        type="password"
+        required
+        placeholder="Ingresa tu contraseña">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Confirmar contraseña</ion-label>
+      <ion-input
+        [(ngModel)]="confirmarPassword"
+        name="confirmarPassword"
+        type="password"
+        required
+        placeholder="Repite la contraseña">
+      </ion-input>
+    </ion-item>
+
+    <ion-button
+      expand="block"
+      type="submit"
+      class="btn-registrar">
+      Registrarse
+    </ion-button>
+
+    <ion-button class="text"
+      expand="block"
+      fill="clear"
+      routerLink="/login">
+      ¿Ya tienes cuenta? Inicia sesión
+    </ion-button>
+  </form>
+</ion-content>

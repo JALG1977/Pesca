@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="foro-header">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Foro de Pesca</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="foro-content">
+
+  <h2 class="foro-title">Temas Recientes</h2>
+
+  <ion-button class="btn-agregar-tema" expand="block" routerLink="/agregartema">
+    Agregar tema
+  </ion-button>
+
+  <div class="temas-container">
+
+    <ion-card *ngFor="let tema of temas" class="tema-card">
+      <ion-card-header>
+        <ion-card-title class="tema-title">{{ tema.titulo }}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p class="tema-descripcion">{{ tema.descripcion }}</p>
+        <p class="tema-autor">Publicado por {{ tema.autor }}</p>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
+</ion-content>
+

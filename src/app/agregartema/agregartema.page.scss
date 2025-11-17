@@ -1,0 +1,40 @@
+.agregartema-header {
+  --background: #001f3f; /* azul marino */
+  color: #ffffff;
+}
+.agregar-tema-content {
+  --background: #f4f5f8;
+  padding: 16px;
+}
+
+ion-toolbar[color='primary'] {
+  --background: #001f3f; /* azul marino */
+  color: #ffffff;
+}
+
+.agregar-tema-title {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 12px 0 20px 0;
+  color: #001f3f;
+}
+
+.agregar-tema-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+ion-item {
+  --background: #ffffff;
+  border-radius: 8px;
+}
+
+.btn-guardar-tema {
+  --background: #001f3f;  /* azul marino */
+  --color: #ffffff;       /* texto blanco */
+  --border-radius: 8px;
+  font-weight: 600;
+  margin-top: 10px;
+}

@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="agregartema-header">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/foro"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Agregar Tema</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="agregar-tema-content">
+
+  <h2 class="agregar-tema-title">Crear nuevo tema de pesca</h2>
+
+  <form (ngSubmit)="guardarTema()" class="agregar-tema-form">
+
+    <ion-item>
+      <ion-label position="stacked">Título del tema</ion-label>
+      <ion-input
+        [(ngModel)]="titulo"
+        name="titulo"
+        required
+        type="text"
+        placeholder="Ej: Consejos para pescar en lago">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Autor</ion-label>
+      <ion-input
+        [(ngModel)]="autor"
+        name="autor"
+        type="text"
+        placeholder="Tu nombre">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Descripción</ion-label>
+      <ion-textarea
+        [(ngModel)]="descripcion"
+        name="descripcion"
+        rows="5"
+        placeholder="Describe tu duda o tema de conversación">
+      </ion-textarea>
+    </ion-item>
+
+    <ion-button
+      type="submit"
+      expand="block"
+      class="btn-guardar-tema">
+      Guardar tema
+    </ion-button>
+
+  </form>
+
+</ion-content>
+
