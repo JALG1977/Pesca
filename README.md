@@ -23,13 +23,16 @@ Requisitos:<br/>
 Node.js instalado.<br/>
 Ionic CLI (global):<br/>
 npm install -g @ionic/cli<br/>
-Git instalado y configurado.<br/>
+Git instalado y configurado.<br/><br/>
+
 Pasos para ejecutar el proyecto localmente:<br/>
 Clonar el repo:<br/>
 git clone https://github.com/JALG1977/Pesca.git<br/>
-cd Pesca<br/>
+cd Pesca<br/><br/>
+
 Instalar dependencias:<br/>
 npm install<br/>
+<br/>
 Levantar el proyecto:<br/>
 ionic serve<br/>
 Abrir en el navegador http://localhost:8100<br/>
