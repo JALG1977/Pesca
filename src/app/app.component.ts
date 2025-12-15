@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterLink, RouterOutlet } from '@angular/router';
+
 import {
   IonApp,
   IonRouterOutlet,
@@ -11,13 +14,17 @@ import {
   IonItem,
   IonLabel,
 } from '@ionic/angular/standalone';
-import { RouterLink } from '@angular/router';
+
+import { DatabaseService } from './services/database.service';
+
 @Component({
   selector: 'app-root',
+  templateUrl: 'app.component.html',
   standalone: true,
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
   imports: [
+    CommonModule,
+    RouterOutlet,
+    RouterLink,
     IonApp,
     IonRouterOutlet,
     IonMenu,
@@ -28,7 +35,11 @@ import { RouterLink } from '@angular/router';
     IonList,
     IonItem,
     IonLabel,
-    RouterLink  
   ],
 })
-export class AppComponent {}
+export class AppComponent {
+  constructor(private databaseService: DatabaseService) {
+    // Inicializa la base de datos SQLite al arrancar la app
+    this.databaseService.init();
+  }
+}

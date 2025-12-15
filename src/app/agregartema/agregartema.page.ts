@@ -46,6 +46,6 @@ export class AgregartemaPage {
     console.log('Título:', this.titulo);
     console.log('Autor:', this.autor);
     console.log('Descripción:', this.descripcion);
-    // Aquí podrías enviar el nuevo tema a un servicio o backend
+    
   }
 }

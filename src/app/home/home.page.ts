@@ -1,81 +1,79 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-  IonContent,
-  IonHeader,
-  IonTitle,
-  IonToolbar,
-  IonButtons,
-  IonMenuButton,
-  IonModal,
-  IonButton,
-  
-} from '@ionic/angular/standalone';
-import { RouterLink } from '@angular/router';
-
-interface Photo {
-  src: string;
-  title: string;
-  description: string;
-}
+import { IonicModule, AlertController } from '@ionic/angular';
+import { Router, RouterModule } from '@angular/router';
+import { CapturasService, Captura } from '../services/capturas.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
-  standalone: true,
-  imports: [
-    CommonModule,
-    IonContent,
-    IonHeader,
-    IonTitle,
-    IonToolbar,
-    IonButtons,
-    IonMenuButton,
-    IonModal,
-    IonButton,
-    RouterLink
-  ],
+  imports: [IonicModule, CommonModule, RouterModule],
 })
-export class HomePage {
-  photos: Photo[] = [
-    {
-      src: 'assets/images/pesca1.jpg',
-      title: 'Pesca 1',
-      description: 'rio trancura.',
-    },
-    {
-      src: 'assets/images/pesca2.jpg',
-      title: 'Pesca 2',
-      description: 'a orillas del río tolten sector el madrigal',
-    },
-    {
-      src: 'assets/images/pesca3.jpg',
-      title: 'Pesca 3',
-      description: 'Pesca con Mosca.',
-    },
-    {
-      src: 'assets/images/pesca4.jpg',
-      title: 'Pesca 4',
-      description: 'Lago Collico pesca en bote',
-    },
-    {
-      src: 'assets/images/pesca5.jpg',
-      title: 'Pesca 5',
-      description: 'El primero del día.',
-    },
-  ];
+export class HomePage implements OnInit {
+  capturas: Captura[] = [];
+  cargando = false;
 
-  isModalOpen = false;
-  selectedPhoto: Photo | null = null;
+  constructor(
+    private capturasService: CapturasService,
+    private authService: AuthService,
+    private router: Router,
+    private alertCtrl: AlertController
+  ) {}
 
-  openModal(photo: Photo) {
-    this.selectedPhoto = photo;
-    this.isModalOpen = true;
+  async ngOnInit() {
+    await this.cargarCapturas();
   }
 
-  closeModal() {
-    this.isModalOpen = false;
+  async ionViewWillEnter() {
+    // cuando vuelves desde agregarimagen, refresca
+    await this.cargarCapturas();
+  }
+
+  async cargarCapturas(event?: any) {
+    this.cargando = true;
+
+    try {
+      const usuario = await this.authService.getUsuarioActual();
+      if (!usuario) {
+        const alert = await this.alertCtrl.create({
+          header: 'Sesión no válida',
+          message: 'Debes iniciar sesión nuevamente.',
+          buttons: ['OK'],
+        });
+        await alert.present();
+        this.router.navigateByUrl('/login', { replaceUrl: true });
+        return;
+      }
+
+      // Ya viene ordenado DESC desde el service (última primero)
+      const lista = await this.capturasService.obtenerCapturas(usuario.id);
+
+      // Reasignación limpia para forzar render
+      this.capturas = [...lista];
+
+    } catch (error) {
+      console.error('Error cargando capturas:', error);
+      const alert = await this.alertCtrl.create({
+        header: 'Error',
+        message: 'No se pudieron cargar las capturas.',
+        buttons: ['OK'],
+      });
+      await alert.present();
+    } finally {
+      this.cargando = false;
+      if (event) event.target.complete();
+    }
+  }
+
+  irAgregar() {
+    this.router.navigateByUrl('/agregarimagen');
+  }
+
+  async cerrarSesion() {
+    await this.authService.cerrarSesion();
+    this.router.navigateByUrl('/login', { replaceUrl: true });
   }
 }
-
