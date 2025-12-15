@@ -1,4 +1,5 @@
-<strong> Complejidades en el desarrollo del foro </strong>
+<strong> Trabajo Unidad 4 Item B <br/>
+Complejidades en el desarrollo del foro </strong>
 
 Durante el desarrollo del foro para la aplicación Pesca se presentaron diversas complejidades que permitieron comprender mejor cómo interactúan los distintos componentes de una aplicación móvil desarrollada con Ionic, Angular, Capacitor y SQLite.
 
