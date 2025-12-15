@@ -1,38 +1,41 @@
 import { Routes } from '@angular/router';
-import { LoginPage } from './login/login.page';
-import { HomePage } from './home/home.page';
+import { AuthGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
+
+  { path: 'login', loadComponent: () => import('./login/login.page').then(m => m.LoginPage) },
+  { path: 'registro', loadComponent: () => import('./registro/registro.page').then(m => m.RegistroPage) },
+
+  { path: 'home', canActivate: [AuthGuard], loadComponent: () => import('./home/home.page').then(m => m.HomePage) },
+
+  // Foro
+  { path: 'foro', loadComponent: () => import('./foro/foro.page').then(m => m.ForoPage) },
+
+  // Agregar tema
+  { path: 'agregartema', loadComponent: () => import('./agregartema/agregartema.page').then(m => m.AgregartemaPage) },
+
+  // Tema foro 
   {
-    path: 'login',
-    loadComponent: () => import('./login/login.page').then(m => m.LoginPage)
+    path: 'temaforo/:id',
+    // canActivate: [AuthGuard], // opcional (si quieres que solo logeados comenten/ver)
+    loadComponent: () => import('./temaforo/temaforo.page').then(m => m.TemaforoPage),
   },
-  {
-    path: 'home',
-    loadComponent: () => import('./home/home.page').then(m => m.HomePage)
-  },
-  {
-    path: 'registro',
-    loadComponent: () => import('./registro/registro.page').then( m => m.RegistroPage)
-  },
-  {
-    path: 'chat',
-    loadComponent: () => import('./chat/chat.page').then( m => m.ChatPage)
-  },
-  
-  {
-    path: 'foro',
-    loadComponent: () => import('./foro/foro.page').then( m => m.ForoPage)
-  },
-   
+
+  // Agregar imagen
   {
     path: 'agregarimagen',
-    loadComponent: () =>
-      import('./agregarimagen/agregarimagen.page').then(m => m.AgregarimagenPage)
+    canActivate: [AuthGuard],
+    loadComponent: () => import('./agregarimagen/agregarimagen.page').then(m => m.AgregarimagenPage),
   },
+
+  // Chat
   {
-    path: 'agregartema',
-    loadComponent: () => import('./agregartema/agregartema.page').then( m => m.AgregartemaPage)
-  }
+    path: 'chat',
+    canActivate: [AuthGuard],
+    loadComponent: () => import('./chat/chat.page').then(m => m.ChatPage),
+  },
+
+  // Wildcard 
+  { path: '**', redirectTo: 'login' },
 ];

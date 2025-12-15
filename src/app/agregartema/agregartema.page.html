@@ -1,57 +1,44 @@
-<ion-header [translucent]="true">
-  <ion-toolbar class="agregartema-header">
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/foro"></ion-back-button>
-    </ion-buttons>
-    <ion-title>Agregar Tema</ion-title>
+<ion-header>
+  <ion-toolbar class="toolbar-principal">
+    <ion-title>Agregar tema</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="agregar-tema-content">
+<ion-content class="ion-padding">
 
-  <h2 class="agregar-tema-title">Crear nuevo tema de pesca</h2>
+  <ion-card class="card-form">
+    <ion-card-content>
 
-  <form (ngSubmit)="guardarTema()" class="agregar-tema-form">
+      <ion-item>
+        <ion-label position="stacked">Título</ion-label>
+        <ion-input
+          [(ngModel)]="titulo"
+          placeholder="Ej: Mejor señuelo para truchas">
+        </ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label position="stacked">Título del tema</ion-label>
-      <ion-input
-        [(ngModel)]="titulo"
-        name="titulo"
-        required
-        type="text"
-        placeholder="Ej: Consejos para pescar en lago">
-      </ion-input>
-    </ion-item>
+      <ion-item class="ion-margin-top">
+        <ion-label position="stacked">Descripción</ion-label>
+        <ion-input
+          [(ngModel)]="descripcion"
+          placeholder="Ej: detalle...">
+        </ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label position="stacked">Autor</ion-label>
-      <ion-input
-        [(ngModel)]="autor"
-        name="autor"
-        type="text"
-        placeholder="Tu nombre">
-      </ion-input>
-    </ion-item>
+      <div class="autor-box ion-margin-top">
+        <span class="autor-label">Creado por:</span>
+        <strong class="autor-value">{{ nombreUsuario }}</strong>
+      </div>
 
-    <ion-item>
-      <ion-label position="stacked">Descripción</ion-label>
-      <ion-textarea
-        [(ngModel)]="descripcion"
-        name="descripcion"
-        rows="5"
-        placeholder="Describe tu duda o tema de conversación">
-      </ion-textarea>
-    </ion-item>
+      <ion-button
+        expand="block"
+        class="btn-guardar ion-margin-top"
+        [disabled]="guardando"
+        (click)="guardarTema()">
+        {{ guardando ? 'Guardando...' : 'Guardar tema' }}
+      </ion-button>
 
-    <ion-button
-      type="submit"
-      expand="block"
-      class="btn-guardar-tema">
-      Guardar tema
-    </ion-button>
-
-  </form>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>
-

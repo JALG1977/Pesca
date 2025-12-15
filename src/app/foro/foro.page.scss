@@ -1,64 +1,28 @@
-/* Encabezado */
-.foro-header {
-  --background: #001f3f; /* azul marino */
-  color: #ffffff;
+.toolbar-principal {
+  --background: #001f3f;
+  --color: #ffffff;
 }
 
-/* Fondo general */
-.foro-content {
-  --background: #f4f5f8; /* gris claro */
-  padding: 16px;
+.btn-icon {
+  --color: #ffffff;
 }
 
-/* Título principal */
-.foro-title {
-  text-align: center;
-  color: #001f3f;
-  font-size: 1.6rem;
-  font-weight: 700;
-  margin: 10px 0 20px 0;
-}
-
-.btn-agregar-tema {
-  --background: #001f3f;   /* azul marino */
-  --color: #ffffff;        /* texto blanco */
-  --border-radius: 8px;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-
-
-/* Contenedor de los temas */
-.temas-container {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-/* Tarjetas */
-.tema-card {
+.tema-item {
+  --background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
-}
-
-/* Títulos de temas */
-.tema-title {
-  color: #001f3f !important; /* azul marino */
-  font-weight: 700;
-  font-size: 1.2rem;
-}
-
-/* Descripción */
-.tema-descripcion {
-  font-size: 0.95rem;
-  color: #333;
   margin-bottom: 10px;
 }
 
-/* Autor */
-.tema-autor {
-  font-size: 0.8rem;
-  font-weight: 600;
+.tema-titulo {
   color: #001f3f;
+  font-weight: 700;
+}
+
+.tema-sub {
+  color: rgba(0, 31, 63, 0.8);
+  font-size: 0.9rem;
+}
+
+.tema-desc {
+  color: rgba(0, 31, 63, 0.85);
 }

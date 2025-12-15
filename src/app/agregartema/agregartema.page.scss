@@ -1,40 +1,37 @@
-.agregartema-header {
-  --background: #001f3f; /* azul marino */
-  color: #ffffff;
-}
-.agregar-tema-content {
-  --background: #f4f5f8;
-  padding: 16px;
+.toolbar-principal {
+  --background: #001f3f;
+  --color: #ffffff;
 }
 
-ion-toolbar[color='primary'] {
-  --background: #001f3f; /* azul marino */
-  color: #ffffff;
-}
-
-.agregar-tema-title {
-  text-align: center;
-  font-size: 1.6rem;
-  font-weight: 700;
-  margin: 12px 0 20px 0;
-  color: #001f3f;
-}
-
-.agregar-tema-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.card-form {
+  border-radius: 14px;
 }
 
 ion-item {
   --background: #ffffff;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
-.btn-guardar-tema {
-  --background: #001f3f;  /* azul marino */
-  --color: #ffffff;       /* texto blanco */
-  --border-radius: 8px;
+.autor-box {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 12px;
+  border: 1px solid rgba(0, 31, 63, 0.15);
+}
+
+.autor-label {
+  color: #001f3f;
+  opacity: 0.85;
+  margin-right: 6px;
+}
+
+.autor-value {
+  color: #001f3f;
+}
+
+.btn-guardar {
+  --background: #001f3f;
+  --color: #ffffff;
+  --border-radius: 10px;
   font-weight: 600;
-  margin-top: 10px;
 }
