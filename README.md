@@ -1,3 +1,22 @@
+<strong> Complejidades en el desarrollo del foro <stron/>
+
+Durante el desarrollo del foro para la aplicación Pesca se presentaron diversas complejidades que permitieron comprender mejor cómo interactúan los distintos componentes de una aplicación móvil desarrollada con Ionic, Angular, Capacitor y SQLite.
+
+Una de las principales dificultades estuvo relacionada con el manejo de la sesión del usuario. Fue necesario asegurar que la información del usuario autenticado estuviera disponible en todas las vistas del foro, de modo que al crear un tema o un comentario quedara correctamente registrado el autor. Esto implicó ajustar la forma en que se guardaban y recuperaban los datos de la sesión sin afectar el funcionamiento del login ni los mecanismos de protección de rutas.
+
+Otra complejidad importante fue el trabajo con la base de datos SQLite. Al tratarse de una base de datos local, fue necesario manejar correctamente su inicialización y asegurar que estuviera disponible antes de realizar consultas o inserciones. En algunos casos, los datos no se mostraban porque la base de datos aún no estaba lista, lo que obligó a implementar controles adicionales y reintentos para garantizar el correcto acceso a la información.
+
+También se presentaron dificultades en la configuración de las rutas y la navegación entre pantallas. La creación de rutas dinámicas para acceder al detalle de cada tema del foro requirió especial atención, ya que errores en la definición o el orden de las rutas provocaban redirecciones inesperadas al login, lo que dificultaba la navegación normal de la aplicación.
+
+El uso de componentes standalone en Angular fue otro aspecto desafiante. Cada página debía declarar explícitamente los módulos necesarios, y la omisión de estos generaba errores en tiempo de compilación, especialmente al utilizar componentes de Ionic y enlaces con ngModel.
+
+Además, se observaron comportamientos inesperados de algunos componentes de Ionic al ejecutarse en Android, como problemas con campos de texto multilínea y bloqueos al mostrar mensajes emergentes. Para resolver esto fue necesario adaptar la implementación y utilizar soluciones más simples y estables.
+
+Finalmente, uno de los mayores desafíos fue integrar el foro sin afectar las funcionalidades ya existentes de la aplicación, como el login, el registro y otras secciones. Esto obligó a realizar cambios controlados y específicos, cuidando que el nuevo módulo se integrara de forma correcta con la estructura general del proyecto.
+
+En conclusión, el desarrollo del foro permitió enfrentar problemas reales de persistencia de datos, manejo de sesiones, navegación y compatibilidad entre tecnologías, contribuyendo al aprendizaje práctico y al fortalecimiento de la aplicación.
+
+
 <strong>Trabajo Unidad 4 Item A <br/>
 Aspectos relevantes en el desarrollo con Angular e Ionic</strong>
 
