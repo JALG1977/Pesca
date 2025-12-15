@@ -1,3 +1,24 @@
+<strong>Trabajo Unidad 4 Item A <br/>
+Aspectos relevantes en el desarrollo con Angular e Ionic</strong>
+
+Durante el desarrollo de la aplicación fue posible identificar varios elementos clave que resultan fundamentales al trabajar con Angular e Ionic, especialmente cuando la aplicación se ejecuta como APK en dispositivos Android reales y no solo en el navegador.
+
+Uno de los aspectos más importantes es la gestión correcta del estado de sesión del usuario. En este proyecto se evidenció que confiar solo en variables en memoria no es suficiente, ya que al navegar entre páginas o al aplicar guards, la sesión puede perderse. Por ello, es fundamental persistir la sesión de forma segura, por ejemplo utilizando localStorage, y asegurarse de que los AuthGuard validen correctamente al usuario antes de permitir el acceso a las rutas protegidas.
+
+Otro punto relevante es la navegación y el uso de guards. Angular permite proteger rutas fácilmente, pero es importante que todas las rutas relacionadas (como listado y detalle) utilicen el mismo criterio de autenticación. De lo contrario, se pueden generar redirecciones inesperadas, como volver al login aun cuando el usuario ya inició sesión.
+
+También se aprendió que el manejo de la interfaz de usuario en Ionic requiere especial cuidado. Problemas como inputs que no activan el teclado en pantalla o botones que cambian de color inesperadamente pueden estar relacionados con el uso incorrecto de componentes, estilos globales o superposición de capas. Usar componentes Ionic estándar (ion-item, ion-input, ion-list) y mantener un CSS ordenado y coherente ayuda a evitar estos errores.
+
+El manejo del estado de carga (loading) es otro aspecto clave. Separar los estados de carga (por ejemplo, cargar datos vs. guardar información) mejora la experiencia del usuario y evita que la aplicación quede “bloqueada” visualmente. Además, mostrar mensajes claros mediante textos visibles y toast ayuda a entender qué está ocurriendo en cada acción.
+
+Finalmente, es importante considerar la persistencia de datos y sus límites. Durante el desarrollo surgieron problemas al intentar guardar imágenes grandes en storage, lo que evidenció la necesidad de elegir correctamente dónde y cómo almacenar la información (por ejemplo, usar filesystem para imágenes y storage solo para metadatos).
+
+En conclusión, desarrollar con Angular e Ionic implica no solo conocer el framework, sino también entender cómo se comporta la aplicación en dispositivos reales. La correcta gestión de la sesión, la navegación, el diseño de la interfaz, el manejo de estados y la persistencia de datos son aspectos fundamentales para lograr una aplicación funcional, estable y con una buena experiencia de usuario.
+
+
+
+
+
 <strong>Resumen del Desarrollo del Proyecto, Problemas Enfrentados, Instalación y Ejecución</strong>
 
 
